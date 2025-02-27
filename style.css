@@ -27,7 +27,7 @@ html::-webkit-scrollbar {
     display: none;
   }
   
-#cursor{
+/* #cursor{
     height: 15px;
     width: 15px;
     background-color: white;
@@ -44,10 +44,10 @@ html::-webkit-scrollbar {
     position: fixed;
     filter: blur(60px);
     z-index: 9;
-}
+} */
 
 header{
-    width: 100;
+    width: 100%;
     /* position: relative; */
     display: flex;
     align-items: center;
@@ -683,10 +683,105 @@ footer
 
 
 .hamburger-menu-new,
-    .toggle-menu
-    {
-        display: none;
+.toggle-menu
+{
+    display: none;
+}
+
+
+/* For smaller screen size */
+@media (max-width: 412px) {
+    body {
+        font-size: 0.6em; 
     }
+
+    header {
+        flex-direction: column;
+        padding: 8px 16px;
+    }
+
+    .second-left, .second-right, .third, .fourth, .fifth {
+        grid-template-columns: 1fr;
+    }
+
+    .fifth-left, .fifth-right {
+        font-size: 2.2em; /* Reduce font size for small screens */
+    }
+
+    .social {
+        font-size: 0.9em; /* Smaller font for social section */
+    }
+
+    .gmail_btn {
+        padding: 12px 20px;
+        font-size: 0.5em;
+    }
+
+    .eighth p {
+        font-size: 2.5em;
+    }
+
+    footer {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    #primary-navigation {
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        position: fixed;
+    }
+
+    #primary-navigation
+    {   
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        position:fixed;
+        background: #000000;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-bottom: 0.8em;
+        padding-left: 0.6em; 
+        justify-content: flex-end;
+        align-items: flex-start;
+        z-index: 1000;
+        font-size: 3.8em;
+        line-height: 0.6em;
+        transform: translateY(-200%);
+        transition: transform 0.5s ease-in-out;
+    }
+    .hamburger-menu-new
+    {
+        display: block;
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background-color:white;
+        border-radius: 10px;
+        z-index: 9999;
+        cursor: pointer;
+        right: 7%;
+    }
+    .hamburger-menu-new:before,
+    .hamburger-menu-new:after
+    {
+        content: " ";
+        position: absolute;
+        right: 0;
+        height: 2px;
+        width: 24px;
+        background-color:white;
+        border-radius: 10px;
+        transition: transform 0.5s ease-out;
+        transform: rotate(0deg);
+        z-index: 9999;
+    }
+}
 
 
 @media (max-width: 1267px){
